@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { TETROMINOS } from '../tetrominos';
 import { StyledCell } from './styles/StyledCell';
 
@@ -9,4 +9,4 @@ const Cell = ({ type }) => (
         </StyledCell>
 );
 
-export default Cell;
+export default memo(Cell);
