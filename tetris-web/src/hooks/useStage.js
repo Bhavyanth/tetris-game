@@ -20,9 +20,13 @@ export const useStage = (player, resetPlayer) => {
                   }
                 });
               });
+              // with new state, check if we collided
+              if(player.collided){
+                  resetPlayer();
+              }
               return newStage;
         };
         setStage(prev => updateStage(prev));
-    },[player]);
+    },[player.collided, player.pos.x, player.pos.y, player.tetromino, resetPlayer]);
     return [stage, setStage];
 }
